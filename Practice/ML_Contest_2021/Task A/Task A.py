@@ -29,8 +29,8 @@ def generate2():
             continue  
         return (x, y)
 
-COUNT_LINE_EVERY_GENERATOR = 100 # Кол-во сгенерированных данных для каждого алгоритма. При "COUNT_LINE_EVERY_GENERATOR = 10" для двух алгоритмов сгенерируется 20 строк
-SIZE_LINE = 1000 # Кол-во координат в строке. 1 координата = 2 значения x,y
+COUNT_LINE_EVERY_GENERATOR = 20 # Кол-во сгенерированных данных для каждого алгоритма. При "COUNT_LINE_EVERY_GENERATOR = 10" для двух алгоритмов сгенерируется 20 строк
+SIZE_LINE = 100 # Кол-во координат в строке. 1 координата = 2 значения x,y
 
 def generete_data():
     targetes_lines_data = []
@@ -50,7 +50,6 @@ def calc_model(xy_train, targetes_train):
     # расчет суммы всех параметров
     count_lines = xy_train.shape[0]
     count_values_in_line = xy_train.shape[1]
-
     # weights = np.ones(count_values_in_line) # Массив весов для всех пар x,y, по умолчанию равен 1
     
     sum_value_generator_1_abs = 0
@@ -72,8 +71,6 @@ def calc_model(xy_train, targetes_train):
         # else: raise ValueError(f"target not defined: {target}")
     return sum_value_generator_1_abs/(count_values_in_line*count_line_generator_1), sum_value_generator_2_abs/(count_values_in_line*count_line_generator_2)
 
-
-
 def predict(avg_gen_1, avg_gen_2, avg_detect):
     if abs(avg_gen_1 - avg_detect) < abs(avg_gen_2 - avg_detect): # Если рассматриваемое значение ближе к 1му алгоритму тогда делаем вывод, что данные сгенерированы 1м алгоритмом, в противном случае 2м
         return GENERATE_ONE
@@ -90,7 +87,7 @@ def load_input_data(input_filename):
 
 def main():
     xy_lines_data, targetes_lines_data = generete_data()
-    assert xy_lines_data.shape[0] == COUNT_LINE_EVERY_GENERATOR*2  and xy_lines_data.shape[1] == SIZE_LINE*2, "Ошибка в количестве рассчитанных данных"
+    # assert xy_lines_data.shape[0] == COUNT_LINE_EVERY_GENERATOR*2  and xy_lines_data.shape[1] == SIZE_LINE*2, "Ошибка в количестве рассчитанных данных"
 
     xy_lines_data.shape
 
