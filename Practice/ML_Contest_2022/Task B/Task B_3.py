@@ -2,8 +2,6 @@ PATH = ""
 input_filename = PATH + "input.txt"
 output_filename = PATH + "output.txt"
 
-
-
 def load_input_data(input_filename):
     with open(input_filename, 'r') as file:
         # Считываем строки из входного файла
