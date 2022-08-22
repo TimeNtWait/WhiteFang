@@ -1,4 +1,3 @@
-# import time
 PATH = ""
 input_filename = PATH + "input.txt"
 output_filename = PATH + "output.txt"
@@ -18,9 +17,6 @@ def load_input_data(input_filename):
 def main():
     # Загружаем входные данные
     points = load_input_data(input_filename)
-    
-    # start_time = time.time()
-
     pre_point = [0,0]
     sum_length = 0
     # Соединяем все вершины 
@@ -38,12 +34,6 @@ def main():
                 if points[j][1] >= height_pre:
                     sum_length += ((points[i-1][1]-points[j][1])**2+(points[i-1][0]-points[j][0])**2)**0.5
                     break
-                
-
-
-    # print(f"Прошло: {time.time()-start_time}")
-    # print(sum_length)
-
     with open(output_filename, "w") as file:
         file.write(f"{sum_length}")    
 
