@@ -1,7 +1,6 @@
 PATH = ""
 input_filename = PATH + "input.txt"
 output_filename = PATH + "output.txt"
-# Проверенно http://pep8online.com/checkresult
 
 
 def load_input_data(input_filename):
