@@ -1,0 +1,16 @@
+6
+add 5 oil
+get coal
+add 7 liverstock
+delete 10
+get oil
+get liverstock
+
+7
+add 10 oil
+add 20 coal
+add 5 oil
+get coal
+get oil
+add 1 coal
+get coal

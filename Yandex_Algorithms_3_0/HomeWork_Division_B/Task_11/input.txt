@@ -1,0 +1,14 @@
+size
+push 23
+exit
+back
+push 22
+back
+size
+clear
+push 1
+back
+back
+size
+clear
+exit
